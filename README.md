@@ -6,7 +6,7 @@
 
 ## Overview
 
-SecureTalk is an encrypted terminal chat application written in Python, based on a client-server model. Currently supported encryption algorithms:
+SecureTalk is an encrypted terminal chat application written in Python, based on a peer-to-peer model. Currently supported encryption algorithms:
 
 \- **pgp**
 
@@ -16,15 +16,18 @@ SecureTalk is an encrypted terminal chat application written in Python, based on
 
 
 
-> ⚠️ **Currently only works on LAN networks.**
+> ⚠️ **It is not yet guaranteed to work remotely:**
+I implemented a webRTC fallback for when the direct connection doesn't work, using a rendezvous server to exchange **only the information for the connection**, i'm working on implementing another fallback on tailscale if webrtc doesn't work. If encounter any problems in the remote communication you should use programs like hamachi or tailscale to create a p2p Vpn
+
+> ⚠️ **Currently deprecated p2p gossip discovery method:**
+I temporarily had to comment all the lines that activated the gossip discovery as i have to work on how to make it happen in remote
 
 ## Dependencies
 
-This project requires **GnuPG (gpg)** to be installed on your local system system-wide, as the codebase relies on the underlying system binaries.
+This project requires **GnuPG (gpg)** to be installed on your local system, as the codebase relies on the underlying system binaries for the encryption of the messages.
 
-pip install prompt_toolkit python-gnupg
+pip install prompt_toolkit python-gnupg aiortc requests pystun3
 
-If you want to communicate from remote, you can use programs like Tailscale or hamachi to create a p2p Vpn
 
 ## Versions
 
@@ -38,21 +41,8 @@ The project has evolved through multiple versions, and is currently at v3.x, the
 * **v3.0** - Xor encryption was added. Images still don't have it lol.
 * **v3.1** - Servers can now advertise themselves in broadcast on the LAN, and can be discovered by clients.
 * **v4.0** - Added pgp encryption, and now you have one single python file, as the project became a real p2p chat.
+* **v5.0** - Now you can contact peer from remote addresses, it's not guaranteed to work tough (look at overview)
 
 
 
-With each commit i'm trying to make the code better and to remove useless variables.
-
-
-
-## Features:
-
-* Encrypted messages (pgp, Caesar, XOR)
-* p2p architecture
-* Fast setup via saved configuration files
-* gossip discovery method
-* 100% terminal-based
-* 100% Python
-
-
-
+With each commit i'm trying to make the code better and more clean.
