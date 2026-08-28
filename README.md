@@ -31,7 +31,7 @@ pip install prompt_toolkit python-gnupg aiortc requests pystun3
 
 ## Versions
 
-The project has evolved through multiple versions, and is currently at v3.x, these are the main improvements for each version:
+The project has evolved through multiple versions, and is currently at v5.x, these are the main improvements for each version:
 
 
 
@@ -41,7 +41,7 @@ The project has evolved through multiple versions, and is currently at v3.x, the
 * **v3.0** - Xor encryption was added. Images still don't have it lol.
 * **v3.1** - Servers can now advertise themselves in broadcast on the LAN, and can be discovered by clients.
 * **v4.0** - Added pgp encryption, and now you have one single python file, as the project became a real p2p chat.
-* **v5.0** - Now you can contact peer from remote addresses, it's not guaranteed to work tough (look at overview)
+* **v5.0** - Now you can contact peer from remote addresses, it's not guaranteed to work though (look at overview)
 
 
 
