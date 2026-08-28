@@ -6,7 +6,7 @@
 
 ## Overview
 
-SecureTalk is an encrypted terminal chat application written in Python, based on a peer-to-peer model. Currently supported encryption algorithms:
+SecChat is an encrypted terminal chat application written in Python, based on a peer-to-peer model. Currently supported encryption algorithms:
 
 \- **pgp**
 
